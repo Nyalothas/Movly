@@ -209,17 +209,9 @@
     <Compile Include="Migrations\201709141133059_AddMembershipType.Designer.cs">
       <DependentUpon>201709141133059_AddMembershipType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709141135100_PopulateMembershipTypes.cs" />
-    <Compile Include="Migrations\201709141135100_PopulateMembershipTypes.Designer.cs">
-      <DependentUpon>201709141135100_PopulateMembershipTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709141148085_UpdateMembershipTypeColumn.cs" />
-    <Compile Include="Migrations\201709141148085_UpdateMembershipTypeColumn.Designer.cs">
-      <DependentUpon>201709141148085_UpdateMembershipTypeColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709141159059_ApplyAnnotationsToCustomerName.cs" />
-    <Compile Include="Migrations\201709141159059_ApplyAnnotationsToCustomerName.Designer.cs">
-      <DependentUpon>201709141159059_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    <Compile Include="Migrations\201709141347284_RollbackMigrations.cs" />
+    <Compile Include="Migrations\201709141347284_RollbackMigrations.Designer.cs">
+      <DependentUpon>201709141347284_RollbackMigrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -324,14 +316,8 @@
     <EmbeddedResource Include="Migrations\201709141133059_AddMembershipType.resx">
       <DependentUpon>201709141133059_AddMembershipType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709141135100_PopulateMembershipTypes.resx">
-      <DependentUpon>201709141135100_PopulateMembershipTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709141148085_UpdateMembershipTypeColumn.resx">
-      <DependentUpon>201709141148085_UpdateMembershipTypeColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709141159059_ApplyAnnotationsToCustomerName.resx">
-      <DependentUpon>201709141159059_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709141347284_RollbackMigrations.resx">
+      <DependentUpon>201709141347284_RollbackMigrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Movly.Models;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Movly.Models;
-using Movly.ViewModels;
 
 namespace Movly.Controllers
 {
@@ -35,11 +32,7 @@ namespace Movly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers;
-            //var viewModel = new CustomersViewModel
-            //{
-            //    Customers = customers
-            //};
+            var customers = _context.Customers.Include(c => c.MembershipType); //Include for EagerLoading
 
             return View(customers);
         }

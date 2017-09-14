@@ -7,13 +7,13 @@ namespace Movly.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class PopulateMembershipTypes : IMigrationMetadata
+    public sealed partial class RollbackMigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateMembershipTypes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RollbackMigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709141135100_PopulateMembershipTypes"; }
+            get { return "201709141347284_RollbackMigrations"; }
         }
         
         string IMigrationMetadata.Source
