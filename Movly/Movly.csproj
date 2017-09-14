@@ -213,6 +213,14 @@
     <Compile Include="Migrations\201709141347284_RollbackMigrations.Designer.cs">
       <DependentUpon>201709141347284_RollbackMigrations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709141406008_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201709141406008_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201709141406008_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709141407082_UpdateMembershipTypeNameRecords.cs" />
+    <Compile Include="Migrations\201709141407082_UpdateMembershipTypeNameRecords.Designer.cs">
+      <DependentUpon>201709141407082_UpdateMembershipTypeNameRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -318,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709141347284_RollbackMigrations.resx">
       <DependentUpon>201709141347284_RollbackMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709141406008_AddNameToMembershipType.resx">
+      <DependentUpon>201709141406008_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709141407082_UpdateMembershipTypeNameRecords.resx">
+      <DependentUpon>201709141407082_UpdateMembershipTypeNameRecords.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
