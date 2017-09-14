@@ -1,4 +1,4 @@
-﻿@model Movly.ViewModels.CustomersViewModel
+﻿@model IEnumerable<Movly.Models.Customer>
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,31 +6,30 @@
 
 <h2>Customers</h2>
 
-@{
-    if (Model.Customers.Count() != 0)
-    {
-        <table class="table table-bordered table-hover">
-            <thead>
+
+@if (!Model.Any())
+{
+    <p>We don't have any customers yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    <b>Customer</b>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int i = 0;}
+            @foreach (var customer in Model)
+            {
+                i++;
                 <tr>
-                    <th>
-                        <b>Customer</b>
-                    </th>
+                    <td><a href="Customers/Details/@i">@customer.Name</a></td>
                 </tr>
-            </thead>
-            <tbody>
-                @{int i = 0;}
-                @foreach (var customer in Model.Customers)
-                {
-                    i++;
-                    <tr>
-                        <td><a href="Customers/Details/@i">@customer.Name</a></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-                    }
-                    else
-                    {
-                        <p>We don't have any customers yet.</p>
-                    }
+            }
+        </tbody>
+    </table>
 }
