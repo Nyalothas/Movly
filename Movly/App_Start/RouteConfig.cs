@@ -13,6 +13,12 @@ namespace Movly
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    "MoviesByReleaseDate",
+            //    "movies/released/{year}/{month}",
+            //    new { controller = "Movies", action = "ByReleaseDate" },
+            //    new { year = @"\d{4}", month = @"\d{2}"}); //regex constraint for year and month parameters  2016|2016 << instead of \d{4}
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
