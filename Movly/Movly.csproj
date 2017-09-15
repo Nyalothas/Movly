@@ -225,9 +225,18 @@
     <Compile Include="Migrations\201709141430187_AddCustomerBirthDateField.Designer.cs">
       <DependentUpon>201709141430187_AddCustomerBirthDateField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709150633498_AddGenreAndMovieProps.cs" />
+    <Compile Include="Migrations\201709150633498_AddGenreAndMovieProps.Designer.cs">
+      <DependentUpon>201709150633498_AddGenreAndMovieProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709150637002_PopulateGenre.cs" />
+    <Compile Include="Migrations\201709150637002_PopulateGenre.Designer.cs">
+      <DependentUpon>201709150637002_PopulateGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -339,6 +348,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709141430187_AddCustomerBirthDateField.resx">
       <DependentUpon>201709141430187_AddCustomerBirthDateField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709150633498_AddGenreAndMovieProps.resx">
+      <DependentUpon>201709150633498_AddGenreAndMovieProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709150637002_PopulateGenre.resx">
+      <DependentUpon>201709150637002_PopulateGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
