@@ -17,6 +17,9 @@ namespace Movly.Models
         [Required]
         public Genre Genre { get; set; }
 
+        [Required]
+        public Genre GenreId { get; set; }
+
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
