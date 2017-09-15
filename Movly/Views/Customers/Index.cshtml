@@ -24,12 +24,10 @@ else
             </tr>
         </thead>
         <tbody>
-            @{int i = 0;}
             @foreach (var customer in Model)
             {
-                i++;
                 <tr>
-                    <td><a href="Customers/Details/@i">@customer.Name</a></td>
+                    <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id=customer.Id}, null)</td>
                     <td>@customer.MembershipType.Name</td>
                     <td>@customer.MembershipType.DiscountRate%</td>
                 </tr>
