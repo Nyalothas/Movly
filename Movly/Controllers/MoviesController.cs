@@ -56,6 +56,19 @@ namespace Movly.Controllers
             return Content("id = " + id);
         }
 
+        // GET: Movies/New
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+
+            var viewModel = new MovieFormViewModel()
+            {
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
         // GET: Movies/Details
         [Route("Movies/Details{id}")]
         public ActionResult Details(int id)
