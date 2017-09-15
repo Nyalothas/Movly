@@ -37,6 +37,12 @@ namespace Movly.Controllers
             return View(customers);
         }
 
+        // GET: Customers/New
+        public ActionResult New()
+        {
+            return View();
+        }
+
         [Route ("Customers/Details/{id}")]
         public ActionResult Details(int id)
         {

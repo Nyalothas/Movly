@@ -15,6 +15,8 @@ namespace Movly.Models
         public bool IsSubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; } //navigation property\
         public byte MembershipTypeId { get; set; }
+
+        [Display(Name = "Date of Birth")] //if we change this name code needs to be recompiled
         public DateTime? BirthDate { get; set; }
     }
 }
