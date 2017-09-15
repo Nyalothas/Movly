@@ -1,32 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Movly.Models;
+﻿using Movly.Models;
 using Movly.ViewModels;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Movly.Controllers
 {
     public class MoviesController : Controller
     {
-        private List<Movie> movies;
+        private ApplicationDbContext _context;
         public MoviesController()
         {
-            movies = new List<Movie>
-            {
-                new Movie { Name = "best 1"},
-                new Movie { Name = "second 2"}
-            };
+            _context = new ApplicationDbContext();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Movies
         public ActionResult Index()
         {
-            var viewModel = new MoviesViewModel
-            {
-                Movies = movies
-            };
-            return View(viewModel);
+            var movies = _context.Movies.Include(c => c.Genre);
+            return View(movies);
         }
 
         // GET: Movies/Random
@@ -56,6 +54,17 @@ namespace Movly.Controllers
         public ActionResult Edit(int id)
         {
             return Content("id = " + id);
+        }
+
+        // GET: Movies/Details
+        [Route("Movies/Details{id}")]
+        public ActionResult Details(int id)
+        {
+            var movies = _context.Movies.Include(c => c.Genre).SingleOrDefault(m =>m.Id == id);
+            if (movies != null)
+                return View(movies);
+            else
+                return HttpNotFound();
         }
 
         [Route("movies/release/{year}/{month:regex(\\d{2}:range(1,12))}")]

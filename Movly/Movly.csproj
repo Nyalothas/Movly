@@ -233,6 +233,10 @@
     <Compile Include="Migrations\201709150637002_PopulateGenre.Designer.cs">
       <DependentUpon>201709150637002_PopulateGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709150751422_PopulateMoviesTable.cs" />
+    <Compile Include="Migrations\201709150751422_PopulateMoviesTable.Designer.cs">
+      <DependentUpon>201709150751422_PopulateMoviesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -310,6 +314,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709150637002_PopulateGenre.resx">
       <DependentUpon>201709150637002_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709150751422_PopulateMoviesTable.resx">
+      <DependentUpon>201709150751422_PopulateMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
