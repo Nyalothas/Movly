@@ -1,4 +1,5 @@
 ﻿using Movly.Models;
+using Movly.ViewModels;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -40,7 +41,13 @@ namespace Movly.Controllers
         // GET: Customers/New
         public ActionResult New()
         {
-            return View();
+            var membershipTypes = _context.MembershipTypes.ToList();
+
+            var viewModel = new NewCustomerViewModel()
+            {
+                MembershipTypes = membershipTypes
+            };
+            return View(viewModel);
         }
 
         [Route ("Customers/Details/{id}")]
