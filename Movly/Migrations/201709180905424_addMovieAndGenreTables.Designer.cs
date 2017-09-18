@@ -13,7 +13,7 @@ namespace Movly.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201709180813072_addMovieAndGenreTables"; }
+            get { return "201709180905424_addMovieAndGenreTables"; }
         }
         
         string IMigrationMetadata.Source

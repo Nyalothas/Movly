@@ -3,7 +3,7 @@ namespace Movly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class populateMoviesTable : DbMigration
+    public partial class populateMovies : DbMigration
     {
         public override void Up()
         {
@@ -12,11 +12,16 @@ namespace Movly.Migrations
             Sql("INSERT INTO MOVIES(Name,ReleaseDate,DateAdded,NumberInStoc,GenreId) VALUES('The Terminator','10/26/1984','01/01/2017',6,2)");
             Sql("INSERT INTO MOVIES(Name,ReleaseDate,DateAdded,NumberInStoc,GenreId) VALUES('Toy Story','11/19/1995','01/01/2017',9,3)");
             Sql("INSERT INTO MOVIES(Name,ReleaseDate,DateAdded,NumberInStoc,GenreId) VALUES('Titanic','11/18/1997','01/01/2017',8,4)");
+
         }
-        
+
         public override void Down()
         {
-            Sql("DELETE * FROM Movies");
+            Sql("DELETE FROM MOVIES WHERE Name = 'Hangover'");
+            Sql("DELETE FROM MOVIES WHERE Name = 'Die Hard'");
+            Sql("DELETE FROM MOVIES WHERE Name = 'The Terminator'");
+            Sql("DELETE FROM MOVIES WHERE Name = 'Toy Story'");
+            Sql("DELETE FROM MOVIES WHERE Name = 'Titanic'");
         }
     }
 }

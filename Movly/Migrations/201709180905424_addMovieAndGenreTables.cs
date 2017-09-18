@@ -11,26 +11,25 @@ namespace Movly.Migrations
                 "dbo.Genres",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Byte(nullable: false),
                         Name = c.String(nullable: false, maxLength: 255),
                     })
                 .PrimaryKey(t => t.Id);
-
+            
             CreateTable(
                 "dbo.Movies",
                 c => new
-                {
-                    Id = c.Int(nullable: false, identity: true),
-                    Name = c.String(nullable: false, maxLength: 255),
-                    ReleaseDate = c.DateTime(nullable: false),
-                    DateAdded = c.DateTime(nullable: false),
-                    NumberInStoc = c.Byte(nullable: false),
-                    GenreId = c.Int(nullable: false),
-                })
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        GenreId = c.Byte(nullable: false),
+                        ReleaseDate = c.DateTime(nullable: false),
+                        DateAdded = c.DateTime(nullable: false),
+                        NumberInStoc = c.Byte(nullable: false),
+                    })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Genres", t => t.GenreId, cascadeDelete: true)
                 .Index(t => t.GenreId);
-
             
         }
         

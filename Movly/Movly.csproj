@@ -225,17 +225,17 @@
     <Compile Include="Migrations\201709141430187_AddCustomerBirthDateField.Designer.cs">
       <DependentUpon>201709141430187_AddCustomerBirthDateField.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709180813072_addMovieAndGenreTables.cs" />
-    <Compile Include="Migrations\201709180813072_addMovieAndGenreTables.Designer.cs">
-      <DependentUpon>201709180813072_addMovieAndGenreTables.cs</DependentUpon>
+    <Compile Include="Migrations\201709180905424_addMovieAndGenreTables.cs" />
+    <Compile Include="Migrations\201709180905424_addMovieAndGenreTables.Designer.cs">
+      <DependentUpon>201709180905424_addMovieAndGenreTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709180819048_populateGenre.cs" />
-    <Compile Include="Migrations\201709180819048_populateGenre.Designer.cs">
-      <DependentUpon>201709180819048_populateGenre.cs</DependentUpon>
+    <Compile Include="Migrations\201709180907356_populateGenres.cs" />
+    <Compile Include="Migrations\201709180907356_populateGenres.Designer.cs">
+      <DependentUpon>201709180907356_populateGenres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709180821417_populateMoviesTable.cs" />
-    <Compile Include="Migrations\201709180821417_populateMoviesTable.Designer.cs">
-      <DependentUpon>201709180821417_populateMoviesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201709180912447_populateMovies.cs" />
+    <Compile Include="Migrations\201709180912447_populateMovies.Designer.cs">
+      <DependentUpon>201709180912447_populateMovies.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -358,14 +358,14 @@
     <EmbeddedResource Include="Migrations\201709141430187_AddCustomerBirthDateField.resx">
       <DependentUpon>201709141430187_AddCustomerBirthDateField.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709180813072_addMovieAndGenreTables.resx">
-      <DependentUpon>201709180813072_addMovieAndGenreTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709180905424_addMovieAndGenreTables.resx">
+      <DependentUpon>201709180905424_addMovieAndGenreTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709180819048_populateGenre.resx">
-      <DependentUpon>201709180819048_populateGenre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709180907356_populateGenres.resx">
+      <DependentUpon>201709180907356_populateGenres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709180821417_populateMoviesTable.resx">
-      <DependentUpon>201709180821417_populateMoviesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709180912447_populateMovies.resx">
+      <DependentUpon>201709180912447_populateMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
