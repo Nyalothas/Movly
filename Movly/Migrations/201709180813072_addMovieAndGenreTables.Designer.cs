@@ -7,13 +7,13 @@ namespace Movly.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class PopulateGenre : IMigrationMetadata
+    public sealed partial class addMovieAndGenreTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateGenre));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addMovieAndGenreTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709150637002_PopulateGenre"; }
+            get { return "201709180813072_addMovieAndGenreTables"; }
         }
         
         string IMigrationMetadata.Source

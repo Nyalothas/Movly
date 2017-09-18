@@ -3,7 +3,7 @@ namespace Movly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PopulateGenre : DbMigration
+    public partial class populateGenre : DbMigration
     {
         public override void Up()
         {
@@ -11,11 +11,11 @@ namespace Movly.Migrations
             Sql("INSERT INTO Genres(Name) Values('Action')");
             Sql("INSERT INTO Genres(Name) Values('Family')");
             Sql("INSERT INTO Genres(Name) Values('Romance')");
-
         }
-
+        
         public override void Down()
         {
+            Sql("DELETE * FROM Genres ");
         }
     }
 }
