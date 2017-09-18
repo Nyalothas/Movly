@@ -52,6 +52,7 @@ namespace Movly.Controllers
         }
 
         [HttpPost] //if access modify data, should not be accessibl e by httpGet
+        [ValidateAntiForgeryToken] //ez
         public ActionResult Save(Customer customer) //binds this model to the request data
         {
             if(!ModelState.IsValid)
