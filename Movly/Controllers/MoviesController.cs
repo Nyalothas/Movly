@@ -1,5 +1,6 @@
 ﻿using Movly.Models;
 using Movly.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -84,14 +85,19 @@ namespace Movly.Controllers
         public ActionResult Save(Movie movie)
         {
             if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                movie.Genre = _context.Genres.Single(g => g.Id == movie.GenreId);
                 _context.Movies.Add(movie);
+            }
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
 
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
-                movieInDb.Genre = movie.Genre;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.Genre = _context.Genres.Single(g => g.Id == movie.GenreId);
                 movieInDb.NumberInStoc = movie.NumberInStoc;
             }
 
@@ -127,5 +133,7 @@ namespace Movly.Controllers
 
         //    return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
         //}
+
+
     }
 }
