@@ -87,7 +87,6 @@ namespace Movly.Controllers
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
-                movie.Genre = _context.Genres.Single(g => g.Id == movie.GenreId);
                 _context.Movies.Add(movie);
             }
             else
@@ -97,7 +96,6 @@ namespace Movly.Controllers
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.GenreId = movie.GenreId;
-                movieInDb.Genre = _context.Genres.Single(g => g.Id == movie.GenreId);
                 movieInDb.NumberInStoc = movie.NumberInStoc;
             }
 

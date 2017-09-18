@@ -7,7 +7,7 @@ namespace Movly.Models
     {
         public int Id { get; set; }
 
-        [Required] //with this attribute, the column name will no longer be nullable
+        [Required(ErrorMessage = "Please enter customer's name")] //with this attribute, the column name will no longer be nullable
         [StringLength(255)] //max number of characters for the column
         public string Name { get; set; }
 
