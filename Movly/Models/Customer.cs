@@ -19,6 +19,7 @@ namespace Movly.Models
         public byte MembershipTypeId { get; set; }
 
         [Display(Name = "Date of Birth")] //if we change this name code needs to be recompiled
+        [Min18YearsIfAMember] //custom Validation
         public DateTime? BirthDate { get; set; }
     }
 }
