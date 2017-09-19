@@ -16,7 +16,7 @@ namespace Movly.Dtos
 
         public byte MembershipTypeId { get; set; }
 
-        [Min18YearsIfAMember] //custom Validation
+        //[Min18YearsIfAMember] //will get error here cause we cast to Customer
         public DateTime? BirthDate { get; set; }
     }
 }
