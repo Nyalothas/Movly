@@ -33,9 +33,10 @@ namespace Movly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType); //Include for EagerLoading
+            //We don't need the list of customers anymore because we use the api to get it
+            //var customers = _context.Customers.Include(c => c.MembershipType); //Include for EagerLoading
 
-            return View(customers);
+            return View();//customers
         }
 
         // GET: Customers/New
