@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Customer</h2>
+<h2>@Model.Title</h2>
 <!-- Create is the target Action in the controller--> 
 @using (Html.BeginForm("Save", "Customers"))
 {
