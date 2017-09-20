@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Movly.Controllers
 {
+    [AllowAnonymous] //allows non registered users to view the page
     public class HomeController : Controller
     {
         public ActionResult Index()

@@ -24,8 +24,11 @@ namespace Movly.Controllers
         // GET: Movies
         public ActionResult Index()
         {
-            var movies = _context.Movies.Include(c => c.Genre);
-            return View(movies);
+            //var movies = _context.Movies.Include(c => c.Genre);
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
 
         // GET: Movies/Random
@@ -52,6 +55,7 @@ namespace Movly.Controllers
         }
 
         // GET: Movies/Edit
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -68,6 +72,7 @@ namespace Movly.Controllers
         }
 
         // GET: Movies/New
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -108,7 +113,7 @@ namespace Movly.Controllers
         [Route("Movies/Details{id}")]
         public ActionResult Details(int id)
         {
-            var movies = _context.Movies.Include(c => c.Genre).SingleOrDefault(m =>m.Id == id);
+            var movies = _context.Movies.Include(c => c.Genre).SingleOrDefault(m => m.Id == id);
             if (movies != null)
                 return View(movies);
             else
