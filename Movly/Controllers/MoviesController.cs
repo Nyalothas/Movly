@@ -87,6 +87,7 @@ namespace Movly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (movie.Id == 0)
