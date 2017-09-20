@@ -1,5 +1,4 @@
-﻿using Movly.Models;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Movly.Dtos

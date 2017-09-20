@@ -9,12 +9,11 @@
 
 @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-primary" })
 <br /><br />
-@if (!Model.Any())
+@*@if (!Model.Any())
 {
     <p>We don't have any movies yet.</p>
-}
-else
-{
+}*@
+
     <table id="movies" class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -24,7 +23,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var movie in Model)
+            @*@foreach (var movie in Model)
             {
                 <tr>
                     <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
@@ -33,15 +32,43 @@ else
                         <button data-movie-id="@movie.Id" class="btn-link js-delete">Delete</button>
                     </td>
                 </tr>
-            }
+            }*@
         </tbody>
     </table>
- }
+ 
 
 @section scripts
 {
     <script>
         $(document).ready(function () {
+
+            // Data Table
+            var table = $("#movies").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc: ""
+                },
+                columns: [
+                    //first column
+                    {
+                        data: "name",
+                        render: function (data, type, movie) {
+                            return "<a href='/movies/edit/" + movie.id + "'>" + movie.name + "</a>";
+                        }
+                    },
+                    //second column
+                    {
+                        data: "genre.name"  
+                    },
+                    //third column
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
 
             // Delete button
             $("#movies").on("click", ".js-delete", function(){
