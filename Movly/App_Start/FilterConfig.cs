@@ -9,7 +9,7 @@ namespace Movly
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new AuthorizeAttribute()); //global - will be applied to all the controllers [Authorize]
-            filters.Add(new RequireHttpsAttribute());
+            filters.Add(new RequireHttpsAttribute()); //this will restrict to HTTPS only - we can't access with http
         }
     }
 }
