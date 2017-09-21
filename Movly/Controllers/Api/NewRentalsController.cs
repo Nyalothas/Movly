@@ -64,10 +64,13 @@ namespace Movly.Controllers.Api
         {
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
-            var rentedMoviesByCustomer = _context.Rentals
-                .Select(r => r.Customer.Id == customerInDb.Id).ToList();
+            var rentedMoviesIdByCustomer = _context.Rentals
+                .Where(c => c.Customer.Id == id)
+                .Select(r => r.Movie.Name)
+                .Distinct()
+                .ToList();
 
-            return Ok(rentedMoviesByCustomer);
+            return Ok(rentedMoviesIdByCustomer);
         }
     }
 }
