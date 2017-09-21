@@ -9,7 +9,7 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" value="" class="form-control" />
+            <input id="customer" data-rule-validCustomer="true " required type="text" value="" class="form-control" />
         </div>
     </div>
     <div class="form-group">
@@ -30,6 +30,7 @@
 
 @section scripts
 {
+    @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
 
@@ -37,6 +38,7 @@
                 movieIds: []
             };
 
+            //typeahead for customers
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -50,13 +52,14 @@
                 minLength: 3,
                 highlight: true
             }, {
-                name: 'customers',
-                display: 'name',
-                source: customers
+                    name: 'customers',
+                    display: 'name',
+                    source: customers
                 }).on("typeahead:select", function (e, customer) {
                     vm.customerId = customer.id;
                 });
 
+            //typeahead for movies
             var movies = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -81,21 +84,28 @@
                     vm.movieIds.push(movie.id);
                 });
 
-            $("#newRental").submit(function (e) {
-                e.preventDefault();
 
-                $.ajax({
-                    url: "/api/newRentals",
-                    method: "post",
-                    data: vm
-                })
-                    .done(function () {
-                        toastr.success("Rentals successfully recorded.");
+            $.validator.addMethod("validCustomer", function () {
+                return vm.customerId && vm.customerId != 0;
+            },"Please select a valid customer.");
+
+            $("#newRental").validate({
+                //if the form is valid this function will be called to submit the form to the server
+                submitHandler: function () {
+                    e.preventDefault();
+
+                    $.ajax({
+                        url: "/api/newRentals",
+                        method: "post",
+                        data: vm
                     })
-                    .fail(function () {
-                        toastr.error("Something unexpected happened.");
-                    });
-
+                        .done(function () {
+                            toastr.success("Rentals successfully recorded.");
+                        })
+                        .fail(function () {
+                            toastr.error("Something unexpected happened.");
+                        });
+                }
             });
 
         });
