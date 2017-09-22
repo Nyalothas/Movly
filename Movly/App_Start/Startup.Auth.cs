@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using System.Configuration;
 using Owin;
 using Movly.Models;
 
@@ -55,8 +56,8 @@ namespace Movly
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "635646106822994",
-               appSecret: "c5f31ec730f43d41bec3931f3c679583");
+               appId: ConfigurationManager.AppSettings["FacebookAppId"], //appSettings always returns a string
+               appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
